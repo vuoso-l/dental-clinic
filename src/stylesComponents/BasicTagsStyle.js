@@ -2,130 +2,87 @@ import styled from "styled-components";
 
 import { device } from "../styleAux/deviceSize";
 import { color } from "../styleAux/theme";
+import { displayFlex } from "../styleAux/theme";
 
-export const H2Style = styled.h2`
+export const H1Style = styled.h1`
   text-shadow: 4px 4px 8px grey;
-  font-size: 24px;
   text-align: center;
-  @media ${device.tablet} {
-    font-size: 30px;
-  }
-  @media ${device.laptop} {
-    font-size: 36px;
-  }
+  padding-top: 10px;
+  border-top: 2px solid white;
+  color: ${color.titleHeader};
 `;
 
-export const H3Style = styled.h3`
-  text-shadow: 2px 2px 4px grey;
-  font-size: 12px;
+export const H2Style = styled.h2`
+  text-shadow: 4px 4px 4px grey;
   text-align: center;
+  color: ${color.titleHeader};
+`;
+
+export const H2CardStyle = styled(H2Style)`
+  color: ${({ theme }) =>
+    theme === "light" ? color.titleLightCard : color.titleDarkCard};
+`;
+
+export const H3CardStyle = styled.h3`
+  text-shadow: 4px 4px 4px grey;
+  text-align: center;
+  color: ${({ theme }) =>
+    theme === "light" ? color.titleLightCard : color.titleDarkCard};
   @media ${device.tablet} {
-    font-size: 14px;
-  }
-  @media ${device.laptop} {
-    font-size: 16px;
+    width: 100%;
   }
 `;
 
 export const H4Style = styled.h4`
-  font-size: 12px;
+  text-shadow: 4px 4px 4px grey;
   font-weight: bold;
   text-align: center;
-  padding-bottom: 10px;
-  @media ${device.tablet} {
-    font-size: 14px;
-  }
-  @media ${device.laptop} {
-    font-size: 16px;
-  }
-`;
-
-export const H4ShopCart = styled.h4`
-  font-size: 20px;
-  background-color: white;
-  border-radius: 50%;
-  text-align: center;
-  padding: 5px;
-  margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-  @media ${device.tablet} {
-    font-size: 22px;
-  }
-  @media ${device.laptop} {
-    font-size: 28px;
-  }
+  padding-bottom: 30px;
+  color: ${color.titleHeader};
 `;
 
 export const ImgStyle = styled.img`
-  width: 70%;
+  width: 50%;
   height: auto;
-  padding: 10px 0px;
-`;
-
-export const ElementCardImg = styled(ImgStyle)`
+  border-radius: 10px;
   &:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
   }
 `;
 
-export const GralButton = styled.button`
-  border: 1px solid;
-  border-radius: 10px;
-  padding: 5px 15px;
+export const ImgPresentation = styled.img`
+  width: 80%;
+  border-radius: 50%;
+  @media ${device.mobileM} {
+    width: 80%;
+  }
+  @media ${device.mobileL} {
+    width: 70%;
+  }
+  @media ${device.tablet} {
+    width: 50%;
+  }
+  @media ${device.laptop} {
+    width: 40%;
+  }
+`;
+
+export const CardContainer = styled.div`
+  ${displayFlex("flex", "column", "center", "center")};
+  @media ${device.tablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
+
+export const GralAnchor = styled.a`
+  padding: 20px 0px;
   margin: 1px 0;
-  color: white;
-  background-color: black;
-  font-size: 12px;
   text-align: center;
-  &:hover {
-    cursor: pointer;
-  }
-  @media ${device.tablet} {
-    font-size: 14px;
-  }
+  width: 100%;
   @media ${device.laptop} {
-    font-size: 16px;
-  }
-`;
-
-export const AddButton = styled(GralButton)`
-  background-color: ${color.addBtn};
-`;
-
-export const DeleteButton = styled(GralButton)`
-  background-color: red;
-`;
-
-export const SelectStyle = styled.select`
-  font-size: 14px;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid;
-  border-radius: 10px;
-  color: white;
-  background-color: ${color.addBtn};
-  @media ${device.tablet} {
-    font-size: 16px;
-  }
-  @media ${device.laptop} {
-    font-size: 20px;
-  }
-`;
-
-export const OptionStyle = styled.option`
-  font-size: 10px;
-  padding: 10px 0;
-  margin-top: 5px;
-  border: 1px solid;
-  border-radius: 10px;
-  color: white;
-  background-color: ${color.addBtn};
-  @media ${device.tablet} {
-    font-size: 12px;
-  }
-  @media ${device.laptop} {
-    font-size: 16px;
+    padding: 40px 0px;
   }
 `;

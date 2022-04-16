@@ -1,5 +1,11 @@
-import { Shift } from "./Shift";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 export const Home = () => {
-  return <Shift />;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 };
