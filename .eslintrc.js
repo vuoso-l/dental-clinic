@@ -23,12 +23,9 @@ module.exports = {
     },
   },
   rules: {
-    "no-console": "warn",
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
     "prettier/prettier": [
       "error",
       {
@@ -37,12 +34,13 @@ module.exports = {
         semi: true,
         singleQuote: false,
         bracketSpacing: true,
-        bracketSameLine: true,
         arrowParens: "always",
         endOfLine: "auto",
         printWidth: 80,
       },
     ],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "no-unused-vars": [
       "error",
       {
