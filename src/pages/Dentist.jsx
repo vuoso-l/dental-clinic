@@ -1,9 +1,12 @@
+import { PostDentist } from "../components/dentist/PostDentist";
+import { ViewDentist } from "../components/dentist/ViewDentist";
 import ErrorComponent from "../components/ErrorComponent";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import Loader from "../components/Loader";
 import SweetAlert from "../helpers/SweetAlert";
 import { useFetch } from "../hooks/useFetch";
+import { ContainerStyle } from "../stylesComponents/ContainerStyle";
 
 export const Dentist = () => {
   const url = "http://localhost:8080/";
@@ -13,10 +16,10 @@ export const Dentist = () => {
 
   if (error) {
     return (
-      <div>
+      <>
         {SweetAlert.messageError(error)}
         <ErrorComponent />
-      </div>
+      </>
     );
   } else if (!isLoaded) {
     return <Loader />;
@@ -24,10 +27,12 @@ export const Dentist = () => {
     return (
       <>
         <Header />
-        <h3>Our dentists...</h3>
-        {data.map((dent) => (
-          <li key={dent.id}>{dent.lastName}</li>
-        ))}
+        <ContainerStyle>
+          <h2>Add a dentist</h2>
+          <PostDentist />
+          <h2>Our dentists...</h2>
+          <ViewDentist data={data} />
+        </ContainerStyle>
         <Footer />
       </>
     );

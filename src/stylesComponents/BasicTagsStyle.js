@@ -86,3 +86,16 @@ export const GralAnchor = styled.a`
     padding: 40px 0px;
   }
 `;
+
+export const GralButton = styled.button`
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin: 1px 0;
+  color: white;
+  background-color: #0d6efd82;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+  }
+`;
